@@ -1,0 +1,144 @@
+:root {
+  --clr-primary-hsl-400: 4 100% 67%;
+
+  --clr-primary-400: hsl(4, 100%, 67%);
+  --clr-primary-300: hsl(15, 100%, 67%);
+  --clr-neutral-900: hsl(234, 29%, 20%);
+  --clr-neutral-600: hsl(235, 18%, 26%);
+  --clr-neutral-300: hsl(231, 7%, 60%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --fs-100: 0.6rem;
+  --fs-300: 0.8rem;
+  --fs-400: 1rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem;
+  --fs-700: 2rem;
+  --fs-800: 3rem;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --ff-roboto: "Roboto", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+html {
+  font-family: var(--ff-roboto);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-900);
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--clr-neutral-900);
+  line-height: 1.1;
+  font-size: var(--fs-800);
+  font-weight: var(--fw-bold);
+}
+
+body {
+  background-color: var(--clr-neutral-600);
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  max-height: 100%;
+}
+
+p {
+  font-size: var(--fs-300);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  max-width: 50rem;
+  background-color: var(--clr-neutral-100);
+  margin-inline: auto;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  place-items: center;
+}
+.sign-up {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wrapper > * + * {
+  margin-top: 1rem;
+}
+
+.wrapper-mini > * + * {
+  margin-top: 0.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+  gap: 0.75rem;
+}
+
+form input {
+  padding: 0.75rem 1rem;
+  display: block;
+  width: 100%;
+  border-radius: 0.25rem;
+  outline: none;
+  border: solid 1px var(--clr-neutral-300);
+}
+form input:focus {
+  border: solid 1px var(--clr-neutral-900);
+}
+
+form label {
+  font-size: var(--fs-100);
+  font-weight: var(--fw-bold);
+}
+
+form button {
+  font-size: var(--fs-300);
+  cursor: pointer;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900);
+  margin-top: 1.25rem;
+}
+
+form button:hover {
+  background: linear-gradient(
+    to right,
+    var(--clr-primary-400),
+    var(--clr-primary-300)
+  );
+  box-shadow: 0rem 0.75rem 1rem 0.2rem hsl(var(--clr-primary-hsl-400) / 0.4);
+}
