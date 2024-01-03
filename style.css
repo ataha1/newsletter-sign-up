@@ -55,6 +55,7 @@ h3 {
 
 body {
   background-color: var(--clr-neutral-600);
+  font: inherit;
 }
 
 main {
@@ -76,14 +77,41 @@ p {
   background-color: var(--clr-neutral-100);
   margin-inline: auto;
   padding: 1rem;
-  border-radius: 1.5rem;
+  --raduis: 1.5rem;
+  border-radius: var(--raduis);
   place-items: center;
 }
+
 .sign-up {
   padding-left: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+    border-radius: 0rem;
+    padding: 0;
+    gap: 0.75rem;
+  }
+
+  .sign-up {
+    padding: 0rem 2rem;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
 }
 
 .wrapper > * + * {
