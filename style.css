@@ -3,6 +3,7 @@
 
   --clr-primary-400: hsl(4, 100%, 67%);
   --clr-primary-300: hsl(15, 100%, 67%);
+  --clr-primary-100: hsl(0, 100%, 94%);
   --clr-neutral-900: hsl(234, 29%, 20%);
   --clr-neutral-600: hsl(235, 18%, 26%);
   --clr-neutral-300: hsl(231, 7%, 60%);
@@ -72,7 +73,7 @@ p {
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
+  gap: min(4rem, 3vw);
   max-width: 50rem;
   background-color: var(--clr-neutral-100);
   margin-inline: auto;
@@ -83,7 +84,7 @@ p {
 }
 
 .sign-up {
-  padding-left: 2rem;
+  padding-left: min(2rem, 5%);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -93,11 +94,11 @@ p {
   display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
   .container {
     grid-template-columns: 1fr;
     border-radius: 0rem;
-    padding: 0;
+    padding: 0 0 1rem 0;
     gap: 0.75rem;
   }
 
@@ -131,7 +132,7 @@ ul {
   gap: 0.75rem;
 }
 
-form input {
+input {
   padding: 0.75rem 1rem;
   display: block;
   width: 100%;
@@ -139,16 +140,21 @@ form input {
   outline: none;
   border: solid 1px var(--clr-neutral-300);
 }
-form input:focus {
+input:focus {
   border: solid 1px var(--clr-neutral-900);
 }
 
-form label {
+label {
+  display: flex;
+  justify-content: space-between;
+}
+
+label p {
   font-size: var(--fs-100);
   font-weight: var(--fw-bold);
 }
 
-form button {
+button {
   font-size: var(--fs-300);
   cursor: pointer;
   width: 100%;
@@ -162,11 +168,52 @@ form button {
   margin-top: 1.25rem;
 }
 
-form button:hover {
+button:hover {
   background: linear-gradient(
     to right,
     var(--clr-primary-400),
     var(--clr-primary-300)
   );
   box-shadow: 0rem 0.75rem 1rem 0.2rem hsl(var(--clr-primary-hsl-400) / 0.4);
+}
+
+.error-msg {
+  color: var(--clr-primary-400);
+  visibility: hidden;
+}
+
+.not-valid,
+.not-valid:focus,
+.not-valid::placeholder {
+  background-color: var(--clr-primary-100);
+  border-color: var(--clr-primary-400);
+  place-content: var(--clr-primary-400);
+  color: var(--clr-primary-400);
+}
+
+.sucess-msg {
+  background-color: var(--clr-neutral-100);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sucess-msg img {
+  width: 3rem;
+}
+
+@media (max-width: 650px) {
+  .sucess-msg {
+    border-radius: 0;
+    width: 100%;
+    max-width: max-content;
+    height: 100vh;
+    padding: 8rem 2rem 2rem 2rem;
+  }
+  .sucess-msg button {
+    margin-top: 12rem;
+  }
 }

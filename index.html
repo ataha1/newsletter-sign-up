@@ -12,7 +12,7 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <title>Newsletter sign-up form with success message</title>
+    <title>Newsletter</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,6 +20,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
   </head>
   <body>
     <!-- Sign-up form start -->
@@ -47,10 +48,15 @@
               </li>
             </ul>
           </div>
-          <form action="">
-            <label for="">Email address</label>
-            <input type="text" placeholder="email@company.com" />
-            <button>Subscribe to monthly newsletter</button>
+          <form action="thanks.html" class="form" method="get">
+            <label for=""
+              ><p>Email address</p>
+              <p class="error-msg">Valid email required</p>
+            </label>
+            <input type="email" placeholder="email@company.com" name="email" />
+            <button class="submit" type="button">
+              Subscribe to monthly newsletter
+            </button>
           </form>
         </section>
         <section class="desktop">
