@@ -204,6 +204,9 @@ button:hover {
 .sucess-msg img {
   width: 3rem;
 }
+.email-submitted {
+  font-weight: var(--fw-bold);
+}
 
 @media (max-width: 650px) {
   .sucess-msg {
