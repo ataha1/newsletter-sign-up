@@ -211,9 +211,23 @@ button:hover {
     width: 100%;
     max-width: max-content;
     height: 100vh;
-    padding: 8rem 2rem 2rem 2rem;
+    /* padding: 8rem 2rem 2rem 2rem; */
+    padding: 0rem 2rem 1rem 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: repeat(8, 1fr);
+  }
+  .sucess-msg img {
+    grid-row: 3 / span 1;
+  }
+  .sucess-msg h1 {
+    grid-row: 4 / span 1;
+  }
+  .sucess-msg p {
+    grid-row: 5 / span 1;
   }
   .sucess-msg button {
-    margin-top: 12rem;
+    grid-row: 8 / span 1;
+    margin: 0;
   }
 }
